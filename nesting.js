@@ -51,7 +51,25 @@ var employees = [
 */
 
 //Code Here
-
+const employeeUpdater = () => {
+  for(let key in employees) {
+    if(employees[key].firstName === "Theo") {
+      employees.splice(key, 1) 
+    } else if (employees[key].firstName === "Lorie") {
+      employees[key].department = "HR"
+    }
+  }
+  return employees;
+}
+//   employees.map((arr, i) => {
+//   if(arr[i]["firstName"] === "Theo") {
+//     arr[i].splice(i, 1)
+//   } else if (arr[i]["firstName"] === "Lorie") {
+//     arr[i]["department"] = "HR"
+//   }
+//   return arr;
+//   });
+// }
 
 
 ////////// PROBLEM 2 //////////
@@ -69,7 +87,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+const removeDuplicates = arr => {
+  for(let i = 0; i < arr.length; i++) {
+    for(let j = i + 1; j < arr.length; j++) {
+      if(arr[i] === arr[j]) {
+        arr.splice(i, 1);
+      }
+    }
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 3 //////////
