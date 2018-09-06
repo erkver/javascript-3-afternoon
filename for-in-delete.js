@@ -77,7 +77,12 @@ const greaterThan10 = obj => {
 */
 
 //Code Here
-
+const double = obj => {
+  for(let key in obj) {
+    obj[key] = obj[key] * 2;
+  }
+  return obj;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -91,7 +96,15 @@ const greaterThan10 = obj => {
 */
 
 //Code Here
-
+const secrets = obj => {
+  let str = "";
+  for(let key in obj) {
+    if(key.startsWith("sh")) {
+      str += obj[key];
+    }
+  }
+  return str
+}
 
 
 /* 
@@ -122,7 +135,10 @@ const greaterThan10 = obj => {
 */
 
 //Code Here
-
+const removePassword = obj => {
+  delete obj.password;
+  return obj;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -141,7 +157,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+for(let key in deleteTheBigNumbers) {
+  if(deleteTheBigNumbers[key] > 100) {
+  delete deleteTheBigNumbers[key]
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -154,7 +174,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+const startsWithK = obj => {
+  for(let key in obj) {
+    if(key.startsWith("k")) {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -169,5 +196,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+const hiddenTreasure = obj => {
+  for(let key in obj) {
+    if(!obj[key].includes("treasure")) {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 

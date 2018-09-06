@@ -59,7 +59,13 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+const totalPopulation = obj => {
+    const { utah } = obj;
+    const { california } = obj;
+    const { texas } = obj;
+    const { arizona } = obj;
+    return utah + california + texas + arizona;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -73,7 +79,12 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+const ingredients = obj => {
+  const { carb } = obj;
+  const { fat } = obj;
+  const { protein } = obj;
+  return [carb, fat, protein];
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -91,7 +102,15 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+const largeNumbers = ( {first, second, third} ) => {
+  if(first < second && first < third) {
+    return first;
+  } else if (second < first && second < third) {
+    return second;
+  } else {
+    return third;
+  }
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -103,5 +122,13 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+const numberGroups = ( {a, b, c} ) => {
+  if(a.length > b.length && a.length > c.length) {
+    return a;
+  } else if(b.length > a.length && b.length > c.length) {
+    return b;
+  } else {
+    return c;
+  }
+}
 

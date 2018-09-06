@@ -100,7 +100,34 @@ class Manager {
 */
 
 //Code Here
-
+class ProgressiveManager {
+  constructor(first_name, last_name, email, age, reports, title, bonus) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+    this.reports = [];
+    this.title = "Not a manager";
+    this.bonus = 0;
+  }
+  hire(employee) {
+    this.reports.push(employee);
+    this.updateTitle();
+  }
+  fire(index) {
+    this.reports.splice(index, 1);
+    this.bonus += 100;
+    this.updateTitle();
+  }
+  updateTitle() {
+    if(this.reports.length >= 101) {this.title = "Bestest Manager"}
+    else if(this.reports.length >= 51) {this.title = "Manager Plus"}
+    else if(this.reports.length >= 11) {this.title = "Manager"}
+    else if(this.reports.length >= 4) {this.title = "Mostly Manager"}
+    else if(this.reports.length >= 1) {this.title = "Barely Manager"}
+    else if(this.reports.length >= 0) {this.title = "Not a Manager"}
+  }
+}
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
@@ -127,5 +154,24 @@ class Manager {
 */
 
 //Code Here
-
+class Machine {
+  constructor(widgets_made_count, wear_and_tear_count, needs_reboot) {
+    this.widgets_made_count = 0;
+    this.wear_and_tear_count = 0;
+    this.needs_reboot = false;
+  }
+  makeWidgets(num) {
+    this.widgets_made_count += num;
+    this.wear_and_tear_count += num / 50;
+  }
+  fixMachine() {
+    this.needs_reboot = true;
+  }
+  reboot(){
+    return () => {
+    this.wear_and_tear_count-=10;
+    this.needs_reboot = false;
+    }   
+  }
+}
 
